@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbarside from '../component/Navbarside';
 import Footer from './Footer';
 import { useDispatch, useSelector } from 'react-redux';
@@ -202,9 +202,10 @@ function Home() {
           <div class="container">
             <div class="page-header">
               <div>
-                <h2 class="main-content-title tx-24 mg-b-5">
-                  Welcome To {Name}({user_type})
+                <h2 className="main-content-title tx-24 mg-b-5">
+                  Welcome To {Name} ({user_type === 'partner_user' ? 'Partner User' : user_type})
                 </h2>
+
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
                     <a href="#">Home</a>
@@ -278,8 +279,8 @@ function Home() {
                             <div class="card-item-stat">
                               <h4 class="font-weight-bold">{formatToINRCurrency(saleTotal)}</h4>
                               <small>
-                              <Link rel="stylesheet" to="/TotalSaleList" >
-                                <b class="text-success">View Sale</b>
+                                <Link rel="stylesheet" to="/TotalSaleList">
+                                  <b class="text-success">View Sale</b>
                                 </Link>
                               </small>
                             </div>
@@ -309,13 +310,12 @@ function Home() {
                           <div class="card-item-body">
                             <div class="card-item-stat">
                               <h4 class="font-weight-bold">{formatToINRCurrency(totalPurchase)}</h4>
-                             
+
                               <small>
-                              <Link rel="stylesheet" to="/TotalPurchaseList" >
-                                <b class="text-success">View Purchase</b>
+                                <Link rel="stylesheet" to="/TotalPurchaseList">
+                                  <b class="text-success">View Purchase</b>
                                 </Link>
                               </small>
-                         
                             </div>
                           </div>
                         </div>
@@ -347,8 +347,8 @@ function Home() {
                             <div class="card-item-stat">
                               <h4 class="font-weight-bold">{formatToINRCurrency(totalbankbalance)}</h4>
                               <small>
-                              <Link rel="stylesheet" to="/TotalBankBalanceList" >
-                                <b class="text-success">View Bank Balance</b>
+                                <Link rel="stylesheet" to="/TotalBankBalanceList">
+                                  <b class="text-success">View Bank Balance</b>
                                 </Link>
                               </small>
                             </div>
@@ -381,8 +381,8 @@ function Home() {
                             <div class="card-item-stat">
                               <h4 class="font-weight-bold">{formatToINRCurrency(0)}</h4>
                               <small>
-                              <Link rel="stylesheet" to="/TotalBankBalanceList" >
-                                <b class="text-success">View Cash</b>
+                                <Link rel="stylesheet" to="/TotalBankBalanceList">
+                                  <b class="text-success">View Cash</b>
                                 </Link>
                               </small>
                             </div>

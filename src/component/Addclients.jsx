@@ -240,7 +240,7 @@ const AddParty = () => {
     if (!formData.name) newErrors.name = 'Name is required.';
     if (!formData.email) newErrors.email = 'Email is required.';
     if (!formData.profile_password) newErrors.profile_password = 'Password is required.';
-    if (!formData.gst) newErrors.gst = 'GST is required.';
+    // if (!formData.gst) newErrors.gst = 'GST is required.';
     if (!formData.company_name) newErrors.company_name = 'Company Name is required.';
     if (!formData.state) newErrors.state = 'State is required.';
     if (!formData.city) newErrors.city = 'City is required.';
@@ -384,7 +384,7 @@ const AddParty = () => {
                                             {errors.city && <span className="text-danger">{errors.city}</span>}
                                         </div>
                                         <div class="col-md-6">
-                                            <label>Company GST <span class="required">*</span> </label>
+                                            <label>Company GST </label>
                                             <input name="gst" type="text" class="form-control" value={formData.gst} required onChange={handleInputChange} />
                                             {errors.gst && <span className="text-danger">{errors.gst}</span>}<br/>
                                             {GSTError && <span className="text-danger">{GSTError}</span>}

@@ -14,7 +14,8 @@ function Home() {
   const { dashboardId } = useParams();
   const user = JSON.parse(localStorage.getItem('user'));
   const id = dashboardId;
-  const Name = location.state?.company_name;;
+  const Name = location.state?.company_name;
+  const topName = user?.data?.company_name;
   const role = user?.data?.role;
   const permissions = user?.data?.permissions?.split(',') || [];
   const isAdmin = role === 'Admin';
@@ -258,7 +259,7 @@ function Home() {
           <div class="page-header">
             <div>
               <h2 class="main-content-title tx-24 mg-b-5">
-                Welcome To {Name}
+                Welcome To {topName}
               </h2>
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">

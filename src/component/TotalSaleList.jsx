@@ -23,6 +23,8 @@ const Item = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [listParties, setListpartners] = useState([]);
+  const [fromDate, setFromDate] = useState(localStorage.getItem('savedFromDate'));
+  const [toDate, setToDate] = useState(localStorage.getItem('savedToDate'));
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -30,8 +32,13 @@ const Item = () => {
 
   // Fetch parties
   useEffect(() => {
+    const params = {
+      partner_id: id,
+      from_date: fromDate,
+      to_date: toDate,
+    };
     setIsLoading(true);
-    dispatch(Getsales({ partner_id: id }))
+    dispatch(Getsales(params))
       .unwrap()
       .then((data) => {
         setIsLoading(false);
@@ -41,7 +48,7 @@ const Item = () => {
         setIsLoading(false);
         console.log(message);
       });
-  }, [dispatch, id]);
+  }, [ id,fromDate,toDate]);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);

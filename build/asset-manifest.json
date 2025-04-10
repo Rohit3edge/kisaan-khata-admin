@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5e4e908.css",
-    "main.js": "/static/js/main.4a2d0304.js",
+    "main.css": "/static/css/main.c9ba1339.css",
+    "main.js": "/static/js/main.f68f7a0c.js",
     "static/js/787.bef6194b.chunk.js": "/static/js/787.bef6194b.chunk.js",
     "static/media/login.jpg": "/static/media/login.47920eba4a9992fb67cf.jpg",
     "static/media/kisaankhatalogo.png": "/static/media/kisaankhatalogo.cba522c1ce72d9e1f134.png",
     "static/media/2.jpg": "/static/media/2.7b4b0747b07e73851e2d.jpg",
     "static/media/5.jpg": "/static/media/5.cb2c501f387bc6193774.jpg",
     "index.html": "/index.html",
-    "main.f5e4e908.css.map": "/static/css/main.f5e4e908.css.map",
-    "main.4a2d0304.js.map": "/static/js/main.4a2d0304.js.map",
+    "main.c9ba1339.css.map": "/static/css/main.c9ba1339.css.map",
+    "main.f68f7a0c.js.map": "/static/js/main.f68f7a0c.js.map",
     "787.bef6194b.chunk.js.map": "/static/js/787.bef6194b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5e4e908.css",
-    "static/js/main.4a2d0304.js"
+    "static/css/main.c9ba1339.css",
+    "static/js/main.f68f7a0c.js"
   ]
 }

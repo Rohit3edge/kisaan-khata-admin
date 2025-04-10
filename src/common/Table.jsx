@@ -2,7 +2,7 @@ import React from 'react';
 import Pagination from './Pagination';
 import Moment from 'moment';
 
-const Table = ({ columns, data, tableRef, pageSize, setPageSize, currentPage, totalCount, onPageChange, handleSearchChange, closing_balance,handleEdit ,handleViewDashboard}) => {
+const Table = ({ columns, data, tableRef, pageSize, setPageSize, currentPage, totalCount, onPageChange, handleSearchChange, closing_balance,handleEdit ,handleViewDashboard,handleDelete}) => {
   const handlePageSizeChange = (e) => {
     setPageSize(Number(e.target.value));
   };
@@ -41,8 +41,10 @@ const Table = ({ columns, data, tableRef, pageSize, setPageSize, currentPage, to
             <button key={index} className={`btn-sm ${button.className}`} onClick={() => {
               if (button.name === "Edit") {
                 handleEdit(row);
-              }  if (button.name === "View Dashboard") {
+              } else if (button.name === "View Dashboard") {
                 handleViewDashboard(row);
+              }else if (button.name === 'Delete') {
+                handleDelete(row);
               }
             }}>
               {button.name}
@@ -53,6 +55,22 @@ const Table = ({ columns, data, tableRef, pageSize, setPageSize, currentPage, to
     }
   
     switch (column.field) {
+      case 'Client_combo':
+        if (row.partner_user_permissions !== "") {
+          const permissions = row.partner_user_permissions || '';
+          const formattedPermissions = permissions
+            ? permissions.split('.,').join(',<br/>')
+            : '';
+      
+          return (
+            <div dangerouslySetInnerHTML={{ __html: formattedPermissions }} />
+          );
+        } else {
+          return null;
+        }
+      
+       
+
       case 'invoice_combined':
         if (row.invoice_prefix==null)return`${row.invoice_number}`
       return `${row.invoice_prefix}${row.invoice_number}`;

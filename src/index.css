@@ -435,6 +435,10 @@ ul.sub-categories {
 
 .alert-message {
   color:#ff3838;
+     border: none !important; 
+   border-radius: 0px !important; 
+   background: none !important; 
+   padding: 0rem !important; 
 }
 legend {
   display: block;

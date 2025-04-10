@@ -18,6 +18,7 @@ const Item = () => {
   const id = user?.data?.id;
   const Name = user?.data?.company_name;
   const user_type = user?.data?.user_type;
+  const userPartner_id=user?.data?.partner_id;
 
   const [isLoading, setIsLoading] = useState(false);
   const [listclients, setListclients] = useState([]);
@@ -120,9 +121,7 @@ const handleInputChange = (selectedOption, actionMeta) => {
 
 
   React.useEffect(() => {
-    const action = user_type === "Admin"
-      ? Listclients()
-      : Listclients({ profile_id: id });
+    const action = (user_type === "Admin"? Listclients() : (user_type === "Partner"?Listclients({ profile_id: id }):Listclients({ profile_id: id,user_type:user_type,partner_id:userPartner_id })));
     setIsLoading(true);
     dispatch(action)
       .unwrap()
@@ -167,14 +166,17 @@ const handleInputChange = (selectedOption, actionMeta) => {
                         </li>
                     </ol>
                     </div>
+                    {(user_type === 'Admin' || user_type === 'Partner') && (
                     <div className="d-flex justify-content-end">
                         <button className="btn ripple btn-default" onClick={() => navigate('/clients/add')}>
                             Add Client
                         </button>
                     </div>
+                              )}
                 </div>
 
                 <div className="row">
+                {(user_type === 'Admin') && (
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
@@ -183,6 +185,7 @@ const handleInputChange = (selectedOption, actionMeta) => {
                             </div>
                         </div>
                     </div>
+                         )}
                     <div className="col-md-12">
                     <Table
                         columns={columns}

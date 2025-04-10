@@ -67,6 +67,13 @@ gettotalsundrycreditors:"/dashboard/get-total-sundry-creditors",
 stockinventorytotal:"/report/stock-inventory-total",
 getfinancialyear: "/client/get-financial-year",
 
+userlist:"/partner-user/list",
+adduser:"/partner-user/add",
+userdelete:"/partner-user/delete",
+userupdate:"/partner-user/update",
+partneruser:"/partner-user/clients",
+getdetailsuser:"/partner-user-detail"
+
 
   
 
